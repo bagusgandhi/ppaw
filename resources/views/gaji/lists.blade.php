@@ -84,7 +84,7 @@ Tambah</a> --}}
 <td>{{ $peg->gaji_pokok + $peg->tunjangan - $peg->potongan}}</td>
 </td>
 <td> 
-<p>cetak</p>
+<p> <a href="{{'/gaji/cetak/'.$peg->id}}"></a> cetak</p>
 </td>
 </tr>
 @endforeach

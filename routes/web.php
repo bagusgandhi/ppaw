@@ -61,6 +61,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/gaji', [GajiController::class, 'index'])->name('gaji.index');
     Route::post('/gaji', [GajiController::class, 'store'])->name('gaji.store');
     Route::get('/gaji/lists', [GajiController::class, 'listsGaji'])->name('gaji.lists')->middleware('prosesgaji');
+    Route::get('/gaji/cetak/{id}', [GajiController::class, 'cetak'])->name('gaji.cetak');
 // Route::get('/gaji/test', [GajiController::class, 'listsGaji'])->name('gaji.lists');
     Route::get('/count', [ProductController::class, 'index']);
     Route::get('/minmax', [ProductController::class, 'minmax']);

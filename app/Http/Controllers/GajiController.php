@@ -57,7 +57,9 @@ class GajiController extends Controller
                     'updated_at'=>date('Y-m-d H:i:s'),
                 ];
             }
-            Gaji::insert($data);
+
+            dd($data);
+            // Gaji::insert($data);
             \DB::commit();
             return redirect()->route('gaji.lists')->with('success', 'Data Gaji sudah disimpan!');
         }catch(\Throwable $e){
@@ -65,6 +67,12 @@ class GajiController extends Controller
         }
 
        
+
+    }
+
+    public function cetak($id){
+        $gaji = Gaji::where('id', $id)->get();
+        return view('gaji.cetak', compact('gaji'));
 
     }
      
